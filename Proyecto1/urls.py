@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AppCoder.views import mostrar_mi_template
-from AppCoder.views import mostrar_tareas
+from AppCoder.views import mostrar_tareas, mostrar_personas
 from SocialTravel.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mi-template/<nombre>/<apellido>',mostrar_mi_template),
-    path('mis-tareas/',mostrar_tareas, name="mis-tareas"),
-    path('',index)
+    path('mis-tareas/<criterio>',mostrar_tareas, name="tareas"),
+    path('',index),
+    path('personas/',mostrar_personas, name="personas"),
 ]
 
