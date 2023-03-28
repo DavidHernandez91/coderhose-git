@@ -4,6 +4,12 @@
 
 {% block listado %}
 
+<form action="{% url 'personas-create' %}" method="POST">
+    {% csrf_token %}
+   {{form.as_p}}
+   <input type="submit" value="Guardar">
+</form>
+
 <url>
     {% for persona in personas %}
      <li>{{persona}}</li>
@@ -12,7 +18,7 @@
 
 {% endblock %}
 
-{% block title %} Total:{{total_personas}} {% endblock %}
+{% block title %} Total: {{total_personas}} {% endblock %}
 
 
 
