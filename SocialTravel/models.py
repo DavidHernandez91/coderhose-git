@@ -8,3 +8,4 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.id} - {self.heading}"
+
